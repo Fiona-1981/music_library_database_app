@@ -88,8 +88,7 @@ describe Application do
       response = get('/albums')
 
       expect(response.status).to eq(200)
-      expect(response.body).to include('<h1>Albums</h1>')
-      expect(response.body).to include('Title: Surfer Rosa')
+      expect(response.body).to include("Surfer Rosa")
     end 
   end
 

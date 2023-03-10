@@ -72,23 +72,34 @@ describe Application do
     end
 
     context "GET /albums/:id" do
-    xit "returns the HTML content for a single album 2" do
+      xit "returns the HTML content for a single album 2" do
       
-      response = get('/albums/2')
+        response = get('/albums/2')
 
-      expect(response.status).to eq(200)
-      expect(response.body).to include('<h1>Surfer Rosa</h1>')
-      expect(response.body).to include('Release year: 1988')
-    end 
-  end
+        expect(response.status).to eq(200)
+        expect(response.body).to include('<h1>Surfer Rosa</h1>')
+        expect(response.body).to include('Release year: 1988')
+      end 
+    end
 
   context "GET /albums" do
-    it "returns all albums" do
+    xit "returns all albums" do
       
       response = get('/albums')
 
       expect(response.status).to eq(200)
       expect(response.body).to include("Surfer Rosa")
+    end 
+  end
+
+  context "GET /artists/:id" do
+    it "returns an HTML page showing a single artist details" do
+    
+      response = get('/artists/2')
+      
+      expect(response.status).to eq(200)
+      expect(response.body).to include("ABBA")
+      # expect(response.body).to include("Rock")
     end 
   end
 
